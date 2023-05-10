@@ -1,8 +1,11 @@
 {
-  "name": "gitsearch",
+  "name": "searchdevs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,23 +13,46 @@
     "@types/node": "^16.18.28",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "axios": "^1.4.0",
+    "history": "^5.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
+    "sass": "^1.62.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
+    "asset-resolver": "^3.0.5",
+    "babel-loader": "^9.1.0",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "extract-loader": "^5.1.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-webpack-loader": "^8.1.0",
+    "lit-scss-loader": "^2.0.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-svg-loader": "^3.0.3",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development"
   },
   "browserslist": {
     "production": [

@@ -1,0 +1,10 @@
+@import "src/index";
+
+.button {
+  background: $primaryColor;
+  color: $onPrimaryColor;
+
+  &:hover {
+    opacity: .7;
+  }
+}
