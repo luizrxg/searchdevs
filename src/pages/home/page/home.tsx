@@ -18,7 +18,6 @@ const Home = () => {
                     setValue={setSearch}
                 />
                 <CustomButton
-                    variant="contained"
                     onClick={getUser}
                 >
                     Search
