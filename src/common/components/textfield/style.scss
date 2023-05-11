@@ -1,0 +1,58 @@
+@import "src/index";
+@import "src/animations";
+
+.input {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  border-radius: .3rem;
+
+  & > #focused-border {
+    background: $primaryColor;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform: translateY(100%)
+  }
+
+  & > #unfocused-border {
+    background: $detailColor;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  & > svg {
+    position: absolute;
+    left: .8rem;
+    z-index: 3;
+    color: $detailColor
+  }
+
+  & > input {
+    width: 100%;
+    background: $backgroundColor;
+    padding: .8rem .8rem .8rem 2.7rem;
+    margin: 2px;
+    border-radius: .2rem;
+    z-index: 2;
+
+    &:focus {
+      & ~ svg {
+        color: $primaryColor;
+      }
+
+      & ~ #focused-border {
+        animation: slide-in forwards .3s;
+      }
+    }
+
+    &:not(:focus) ~ div#focused-border {
+      animation: slide-out forwards .6s;
+    }
+  }
+}

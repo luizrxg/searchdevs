@@ -1,10 +1,19 @@
 @import "src/index";
 
 .button {
-  background: $primaryColor;
-  color: $onPrimaryColor;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
 
-  &:hover {
-    opacity: .7;
+  & > button {
+    background: $primaryColor;
+    color: $onPrimaryColor;
+    padding: .7rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: .3rem;
+    font-weight: 500;
   }
 }

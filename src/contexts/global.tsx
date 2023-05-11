@@ -17,8 +17,8 @@ export default function GlobalProvider({children}: any) {
             const reposRes = await apiRoutes.getRepositories(search)
             console.log(userRes)
             console.log(reposRes)
-            // setUser(res)
-            // setRepos(res)
+            setUser(userRes.data)
+            setRepos(reposRes.data.sort((a: Repo, b: Repo) => a.stargazers_count - b.stargazers_count))
             setLoading(false)
         } catch (err: any) {
             throw new Error(err.message)

@@ -5,6 +5,7 @@ $secondaryColor: #FFFFFF;
 $onSecondaryColor: #4A5568;
 $backgroundColor: #FCFCFC;
 $titleColor: #171923;
+$detailColor: #E2E8F0;
 
 *{
   margin: 0;
@@ -21,7 +22,6 @@ $titleColor: #171923;
   word-break: keep-all;
   -webkit-tap-highlight-color: transparent;
   font-family: 'Inter', sans-serif;
-  letter-spacing: 2.5px;
   text-overflow: ellipsis;
 }
 
@@ -51,6 +51,14 @@ a[href]:hover{
 a[href]:active{
   text-decoration: none;
   opacity: .3;
+}
+
+a[href] {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 button{

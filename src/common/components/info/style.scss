@@ -1,0 +1,21 @@
+@import "src/index";
+
+.info {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+
+  & > svg {
+    color: $onSecondaryColor;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  & > p, & > a {
+    color: $onSecondaryColor
+  }
+}

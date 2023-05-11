@@ -1,0 +1,31 @@
+@import "src/index";
+
+.repo {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 2px solid $detailColor;
+
+  .title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: $titleColor;
+  }
+
+  .description {
+    color: $onSecondaryColor;
+    width: 100%;
+  }
+
+  & > div {
+    color: $onSecondaryColor;
+
+    & > svg {
+      color: $onSecondaryColor;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

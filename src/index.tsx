@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
+
+import {createTheme, ThemeProvider} from "@mui/material";
+
 import Routes from "./routes";
 import Home from "./pages/home/page/home";
-import {createTheme, ThemeProvider} from "@mui/material";
+import Profile from "./pages/profile";
+
+import './index.scss';
 
 const theme = createTheme({
     palette: {
@@ -26,9 +30,10 @@ const theme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-      <ThemeProvider theme={theme}>
-            <Home/>
-      </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      {/*<Home/>*/}
+      <Profile/>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
