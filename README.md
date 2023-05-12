@@ -1,46 +1,55 @@
-# Getting Started with Create React App
+# SearchDevs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SearchDevs é um projeto de pesquisa de perfis no GitHub, que utiliza a API de busca de usuário do próprio GitHub. Foi desenvolvido utilizando a linguagem TypeScript e as bibliotecas React, Sass, Material-UI, react-router-dom e Axios.
 
-## Available Scripts
+## Descrição
 
-In the project directory, you can run:
+O SearchDevs é uma aplicação web que permite aos usuários pesquisar perfis de desenvolvedores no GitHub com base em critérios de busca, como nome de usuário, localização, tecnologias de interesse, entre outros. A aplicação utiliza a API de busca de usuário do GitHub para obter os resultados da pesquisa.
 
-### `npm start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Pesquisa de perfis de desenvolvedores no GitHub com base em critérios de busca.
+- Exibição dos principais detalhes do perfil do desenvolvedor, como nome, foto, bio, localização, número de seguidores entre outros.
+- Visualização dos repositórios mais populares do desenvolvedor.
+- Navegação entre os perfis dos desenvolvedores pesquisados.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Pré-requisitos
 
-### `npm test`
+- Node.js (versão 18.0.0 ou mais recente)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalação
 
-### `npm run build`
+1. Clone o repositório:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+$ git clone https://github.com/luizrxg/searchevs.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Navegue até o diretório do projeto: cd searchdevs
+2. Instale as dependências: npm i --legacy-peer-deps
+3. Inicie a aplicação: npm start
+4. A aplicação estará disponível em http://localhost:3000.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Uso
 
-### `npm run eject`
+Acesse a página inicial da aplicação em http://localhost:3000.
+Digite o nome do usuário no campo correspondente.
+Clique no botão "Search" para obter os resultados da busca.
+Navegue pelos perfis dos desenvolvedores encontrados e visualize suas informações e repositórios.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Estrutura de projeto
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Foi utilizada a estrutura padrão do React (public, src), adicionada do modelo de pastas similar ao de MVVM, com a pasta commons para componentes e tipos de Typescript,
+a pasta services para implementeção da API através do axios, a pasta utils para utilidades genéricas, a pasta pages para os componentes das páginas, a pasta contexts para
+os contextos do React e a pasta svgs para componentes SVG.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Bibliotecas utilizadas
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+GitHub por fornecer a API de busca de usuário do GitHub.
+Material-UI por fornecer componentes de interface amigáveis.
+Axios por simplificar as requisições HTTP.
+react-router-dom por ser a biblioteca de navegação mais compatível com React e por sua praticidade
+sass por oferecer uma maior organização de arquivos css
 
-## Learn More
+## Autores
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Luiz Ricardo
