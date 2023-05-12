@@ -8,13 +8,15 @@ const CustomButton = (props: any) => {
     const buttonRef = React.useRef<HTMLButtonElement>()
 
     return (
-        <Box
+        <button 
+            {...props}
             ref={buttonRef}
-            className="button"
-            onClick={() => Ripple(buttonRef)}
-        >
-            <button {...props}/>
-        </Box>
+            className={"button " + props.className}
+            onClick={() => {
+                Ripple(buttonRef)
+                props.onClick()
+            }}
+        />
     )
 }
 

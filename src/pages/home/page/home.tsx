@@ -8,21 +8,38 @@ import CustomButton from '../../../common/components/button/button';
 import LogoSVG from "../../../svgs/logo";
 
 import './styles.scss'
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-    const { search, setSearch, getUser } : any = useContext(GlobalContext)
+    const { 
+        search, 
+        setSearch, 
+        getUser,
+    } : any = useContext(GlobalContext)
 
+    const navigate = useNavigate()
+    
     return (
-        <div className="container">
-            {/*<LogoSVG/>*/}
-            <div className="search">
+        <div className="home-container">
+            <LogoSVG/>
+            <div className="home-search">
                 <CustomTextField
                     placeholder="Search"
                     value={search}
-                    setValue={setSearch}
-                    onEnter={getUser}
+                    onChange={(e: any) => setSearch(e)}
+                    onEnter={() => {
+                        getUser()
+                        navigate('/profile')
+                    }}
+                    style={{width: '50%'}}
                 />
-                <CustomButton onClick={getUser}>
+                <CustomButton 
+                    style={{width: '200px'}} 
+                    onClick={() => {
+                        getUser()
+                        navigate('/profile')
+                    }}
+                >
                     Search
                 </CustomButton>
             </div>

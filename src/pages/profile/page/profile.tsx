@@ -11,47 +11,56 @@ import Info from "../../../common/components/info/info";
 import {CompanyIcon, FollowersIcon, HeartIcon, LinkIcon, LocationIcon, MailIcon, TwitterIcon} from "../../../svgs/icons"
 
 import './styles.scss'
-import { Tooltip } from '@mui/material';
+import { CircularProgress, Tooltip } from '@mui/material';
 import {copy} from "../../../util/copy";
+import Repo from '../../../common/types/repo';
+import RepoCard from '../../../common/components/repoCard/repoCard';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
     const {
-        search,
-        setSearch,
-        user,
-        getUser,
-        repos
+      search,
+      setSearch,
+      user,
+      getUser,
+      repos, 
+      loading
     }: any = useContext(GlobalContext)
 
+    const navigate = useNavigate()
 
     return ( <>
-      {user == null &&
-        <div className="container">
-          <div className="header">
-            <LogoSVG className="logo"/>
-            <CustomTextField
-              placeholder="Search"
-              value={search}
-              setValue={setSearch}
-              style={{width: '50%'}}
-            />
-            <CustomButton onClick={getUser}>
-              Search
-            </CustomButton>
+        <div className="profile-container">
+          <div className="profile-header">
+            <LogoSVG className="profile-logo"/>
+            <div className="profile-search">
+              <CustomTextField
+                placeholder="Search"
+                value={search}
+                onChange={setSearch}
+                onEnter={getUser}
+                style={{width: '50%'}}
+              />
+              <CustomButton style={{width: '200px'}} onClick={getUser}>
+                Search
+              </CustomButton>
+            </div>
           </div>
-          <div className="result-container">
-            <div className="profile">
-              <div className="profile-header">
+          <div className="profile-result-container">
+          {!loading ? <>
+          {user && <>
+            <div className="profile-result">
+              <div className="profile-result-header">
                 <img
                   alt="Profile Picture"
                   src={user?.avatar_url}
                 />
                 <aside>
                   <h1>{user?.name}</h1>
-                  <h2>{user?.user}</h2>
+                  <h2>@{user?.login}</h2>
                 </aside>
               </div>
-              <div className="profile-infos">
+              <div className="profile-result-infos">
                 <aside>
                   <Info>
                     <FollowersIcon/>
@@ -62,7 +71,7 @@ const Profile = () => {
                     <p>{user?.followers} seguindo</p>
                   </Info>
                 </aside>
-                <p className="profile-bio">
+                <p className="profile-result-bio">
                   {user?.bio}
                 </p>
                 <aside>
@@ -93,18 +102,22 @@ const Profile = () => {
                     </a>
                   </Info>
                 </aside>
+                <Tooltip title="Clique para copiar" arrow>
+                  <CustomButton
+                    style={{width: '100%'}}
+                    onClick={() => { copy(user?.email) }}
+                  >
+                    Contato
+                  </CustomButton>
+                </Tooltip>
               </div>
-              <Tooltip title="Clique para copiar" arrow>
-                <CustomButton
-                  onClick={() => { copy(user?.email) }}
-                >
-                  Contato
-                </CustomButton>
-              </Tooltip>
             </div>
-            <div className="repos-list"></div>
+            <div className="profile-result-repos-list">
+              {repos?.map((repo: Repo) => <RepoCard {...repo}/>)}
+            </div> </>
+          } </> : <CircularProgress/>}
           </div>
-        </div>}
+        </div>
       </>
     )
 }

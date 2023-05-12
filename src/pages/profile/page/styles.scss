@@ -1,41 +1,99 @@
 @import "src/index";
 
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background: $backgroundColor;
+.profile {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    background: $backgroundColor;
+    box-sizing: border-box;
+  }
 
-  .header {
+  &-header {
     display: flex;
     flex-direction: row;
     width: 100%;
     background: $secondaryColor;
+    align-self: flex-start;
     align-items: center;
     justify-content: start;
     padding: 1rem 5rem;
+    gap: 5rem;
 
-    .logo {
-      height: 2rem
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+    }
+  }
+  
+  &-logo {
+    width: fit-content;
+    height: 50%;
+
+    @media only screen and (max-width: 768px) {
+      width: 50%;
     }
   }
 
-  .result-container {
+  &-search {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    padding: 3rem;
     width: 100%;
 
-    .profile {
+    @media only screen and (max-width: 768px) {
+      gap: 0;
+
+      & > div {
+        width: 100%;
+      }
+
+      & > button {
+        display: none;
+      }
+    }
+  }
+
+  &-result {
+    &-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 3rem;
+      width: 100%;
+      height: calc(100% - 6rem);
+      box-sizing: border-box;
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    & {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       background: $secondaryColor;
+      height: fit-content;
+      border-radius: .3rem;
+      padding: 1rem;
 
       &-header {
         display: flex;
         flex-direction: row;
+        justify-content: flex-start;
         gap: 1rem;
+
+        & > img {
+          border-radius: 100%;
+          width: 6rem;
+          aspect-ratio: 1;
+        }
 
         & > aside {
           display: flex;
@@ -57,21 +115,21 @@
       &-infos {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         gap: 1rem;
       }
     }
 
-    .repos-list {
+    &-repos-list {
       display: flex;
       flex-direction: column;
+      max-height: 100%;
       overflow-y: auto;
       background: $secondaryColor;
       width: 100%;
+      padding: 1rem;
+      gap: .5rem;
+      border-radius: .3rem;
     }
   }
 }
-
-
-
-
-

@@ -23,10 +23,9 @@ const CustomTextField = (props: any) => {
             <input
                 {...props}
                 style={props?.inputStyle}
+                onChange={(e: any) => props?.onChange(e.target.value)}
             />
             <SearchIcon/>
-            <div id="focused-border"/>
-            <div id="unfocused-border"/>
         </Box>
     )
 }

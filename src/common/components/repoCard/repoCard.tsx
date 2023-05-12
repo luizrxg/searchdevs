@@ -1,10 +1,10 @@
 import * as React from 'react';
 import './style.scss'
-import Repo from '../../../common/types/repo'
+import Repo from '../../types/repo'
 import { StarIcon } from "../../../svgs/icons";
 import {getDaysSince} from "../../../util/date";
 
-const Repo = (repo: Repo) => {
+const RepoCard = (repo: Repo) => {
 
     const getDays = () => {
         const date = new Date()
@@ -19,10 +19,10 @@ const Repo = (repo: Repo) => {
             <p className="description">{repo.description}</p>
             <div>
                 <StarIcon/>
-                {repo.stargazers_count} • {getDaysSince(repo.updated_at)}
+                <p>{repo.stargazers_count} • Atulizado há {getDaysSince(repo.updated_at)} dias</p>
             </div>
         </div>
     )
 }
 
-export default Repo
+export default RepoCard
