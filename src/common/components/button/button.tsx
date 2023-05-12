@@ -8,13 +8,17 @@ const CustomButton = (props: any) => {
     const buttonRef = React.useRef<HTMLButtonElement>()
 
     return (
-        <Box
+        <button
+            {...props}
             ref={buttonRef}
-            className="button"
-            onClick={() => Ripple(buttonRef)}
-        >
-            <button {...props}/>
-        </Box>
+            className={`button ${props?.enabled == false && 'disabled'}`}
+            onClick={() => {
+                if (props.enabled != false) {
+                    Ripple(buttonRef)
+                    props.onClick()
+                }
+            }}
+        />
     )
 }
 

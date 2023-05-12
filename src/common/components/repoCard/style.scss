@@ -7,6 +7,11 @@
   justify-content: space-between;
   gap: 1rem;
   border-bottom: 2px solid $detailColor;
+  padding-bottom: 1rem;
+
+  &:last-child {
+    border: none
+  }
 
   .title {
     font-weight: bold;
@@ -20,7 +25,13 @@
   }
 
   & > div {
-    color: $onSecondaryColor;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & > p {
+      color: $onSecondaryColor;
+    }
 
     & > svg {
       color: $onSecondaryColor;

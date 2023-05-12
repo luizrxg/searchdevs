@@ -2,23 +2,11 @@
 @import "src/animations";
 
 .ripple {
-  width: 20px;
-  height: 20px;
+  width: 0;
   position: absolute;
   border-radius: 100%;
   background: #FFF;
   animation: ripple linear forwards .5s;
   pointer-events: none;
-}
-
-@keyframes ripple {
-  from {
-    opacity: .5;
-    transform: scale(0)
-  }
-
-  to {
-    opacity: 0;
-    transform: scale(20)
-  }
+  aspect-ratio: 1;
 }

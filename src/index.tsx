@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import {createTheme, ThemeProvider} from "@mui/material";
+import {createTheme, Snackbar, ThemeProvider} from "@mui/material";
 
-import Routes from "./routes";
-import Home from "./pages/home/page/home";
-import Profile from "./pages/profile";
+import Router from "./routes";
 
 import './index.scss';
+import GlobalProvider from './contexts/global';
+import CustomSnackbar from "./common/components/snackbar/snackbar";
 
 const theme = createTheme({
     palette: {
@@ -31,8 +31,10 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      {/*<Home/>*/}
-      <Profile/>
+      <GlobalProvider>
+        <Router/>
+        <CustomSnackbar/>
+      </GlobalProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

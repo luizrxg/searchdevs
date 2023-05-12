@@ -2,26 +2,30 @@ import React, {createContext, useEffect, useState} from "react";
 import apiRoutes from "../services/api.routes";
 import User from "../common/types/user";
 import Repo from "../common/types/repo";
+import { useNavigate } from "react-router-dom";
 
 export const GlobalContext = createContext({});
+
 export default function GlobalProvider({children}: any) {
     const [loading, setLoading] = useState<boolean>(false)
     const [search, setSearch] = useState<string>("")
-    const [user, setUser] = useState<User | null>(null)
-    const [repos, setRepos] = useState<Repo[]>([])
+    const [message, setMessage] = useState<string>("")
+    const [user, setUser] = useState<any>()
+    const [repos, setRepos] = useState<any>()
 
     const getUser = async () => {
-        try {
-            setLoading(true)
-            const userRes = await apiRoutes.getUser(search)
-            const reposRes = await apiRoutes.getRepositories(search)
-            console.log(userRes)
-            console.log(reposRes)
-            setUser(userRes.data)
-            setRepos(reposRes.data.sort((a: Repo, b: Repo) => a.stargazers_count - b.stargazers_count))
-            setLoading(false)
-        } catch (err: any) {
-            throw new Error(err.message)
+        if (search) {
+            try {
+                setLoading(true)
+                const userRes = await apiRoutes.getUser(search)
+                const reposRes = await apiRoutes.getRepositories(search)
+                setUser(userRes)
+                setRepos(reposRes)
+                setLoading(false)
+            } catch (err: any) {
+                setMessage(err.message)
+                setLoading(false)
+            }
         }
     }
 
@@ -33,7 +37,9 @@ export default function GlobalProvider({children}: any) {
                 loading,
                 getUser,
                 search,
-                setSearch
+                setSearch,
+                message,
+                setMessage
             }}
         >
             {children}

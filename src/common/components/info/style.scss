@@ -7,15 +7,15 @@
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  gap: .5rem;
+  gap: .7rem;
 
   & > svg {
     color: $onSecondaryColor;
-    width: 2rem;
-    height: 2rem;
+    min-width: 2rem;
+    min-height: 2rem;
   }
 
   & > p, & > a {
-    color: $onSecondaryColor
+    color: $onSecondaryColor !important
   }
 }

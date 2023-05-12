@@ -3,7 +3,7 @@ $primaryColor: #8C19D2;
 $onPrimaryColor: #FFFFFF;
 $secondaryColor: #FFFFFF;
 $onSecondaryColor: #4A5568;
-$backgroundColor: #FCFCFC;
+$backgroundColor: #eeeeee;
 $titleColor: #171923;
 $detailColor: #E2E8F0;
 
@@ -38,22 +38,22 @@ body > *:hover, *:active, *:focus *:not(:hover), *:not(:active), *:not(:focus){
   transition: 200ms;
 }
 
-a[href]{
+a{
   text-decoration: none;
   color: initial;
 }
 
-a[href]:hover{
+a:hover{
   text-decoration: none;
   opacity: .8;
 }
 
-a[href]:active{
+a:active{
   text-decoration: none;
   opacity: .3;
 }
 
-a[href] {
+a {
   cursor: pointer;
 
   &:hover {

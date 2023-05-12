@@ -6,14 +6,6 @@ import SearchIcon from '@mui/icons-material/Search';
 const CustomTextField = (props: any) => {
     const inputRef = useRef<HTMLInputElement>()
 
-    if (props.onEnter != null) {
-        inputRef.current?.addEventListener("keyup", (event) => {
-            if (event.key === "Enter") {
-                props?.onEnter()
-            }
-        });
-    }
-
     return (
         <Box
             ref={inputRef}
@@ -23,10 +15,9 @@ const CustomTextField = (props: any) => {
             <input
                 {...props}
                 style={props?.inputStyle}
+                onChange={(e: any) => props?.onChange(e.target.value)}
             />
             <SearchIcon/>
-            <div id="focused-border"/>
-            <div id="unfocused-border"/>
         </Box>
     )
 }

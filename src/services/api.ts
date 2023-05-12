@@ -13,11 +13,19 @@ api?.interceptors?.response.use(
         return response.data;
     },
 
-    () => {
-        let apiError: ApiError = {
-            stack: "",
-            message: "Erro ao executar API",
-        };
+    (response) => {
+        let apiError: ApiError
+        if (response.status === NO_CONTENT) {
+            apiError = {
+                stack: "",
+                message: "Erro ao executar API",
+            };
+        } else {
+            apiError = {
+                stack: "",
+                message: "Nenhum usuário encontrado",
+            };
+        }
 
         return Promise.reject(apiError);
     },
