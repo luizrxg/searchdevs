@@ -23,6 +23,7 @@ O SearchDevs é uma aplicação web que permite aos usuários pesquisar perfis d
 
 ```bash
 $ git clone https://github.com/luizrxg/searchevs.git
+```bash
 
 1. Navegue até o diretório do projeto: cd searchdevs
 2. Instale as dependências: npm i --legacy-peer-deps
