@@ -19,14 +19,14 @@ O SearchDevs é uma aplicação web que permite aos usuários pesquisar perfis d
 
 ## Instalação
 
-1. Clone o repositório:
+- Clone o repositório:
 
 $ git clone https://github.com/luizrxg/searchevs.git
 
-1. Navegue até o diretório do projeto: cd searchdevs
-2. Instale as dependências: npm i --legacy-peer-deps
-3. Inicie a aplicação: npm start
-4. A aplicação estará disponível em http://localhost:3000.
+- Navegue até o diretório do projeto: cd searchdevs
+- Instale as dependências: npm i --legacy-peer-deps
+- Inicie a aplicação: npm start
+- A aplicação estará disponível em http://localhost:3000.
 
 ## Uso
 
@@ -35,7 +35,7 @@ Digite o nome do usuário no campo correspondente.
 Clique no botão "Search" para obter os resultados da busca.
 Navegue pelos perfis dos desenvolvedores encontrados e visualize suas informações e repositórios.
 
-## Estrutura de projeto
+## Estrutura do projeto
 
 Foi utilizada a estrutura padrão do React (public, src), adicionada do modelo de pastas similar ao de MVVM, com a pasta commons para componentes e tipos de Typescript,
 a pasta services para implementeção da API através do axios, a pasta utils para utilidades genéricas, a pasta pages para os componentes das páginas, a pasta contexts para
@@ -43,11 +43,11 @@ os contextos do React e a pasta svgs para componentes SVG.
 
 ## Bibliotecas utilizadas
 
-GitHub por fornecer a API de busca de usuário do GitHub.
-Material-UI por fornecer componentes de interface amigáveis.
-Axios por simplificar as requisições HTTP.
-react-router-dom por ser a biblioteca de navegação mais compatível com React e por sua praticidade
-sass por oferecer uma maior organização de arquivos css
+- GitHub por fornecer a API de busca de usuário do GitHub.
+- Material-UI por fornecer componentes de interface amigáveis.
+- Axios por simplificar as requisições HTTP.
+- react-router-dom por ser a biblioteca de navegação mais compatível com React e por sua praticidade
+- sass por oferecer uma maior organização de arquivos css
 
 ## Autores
 
